@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  OnInit,
+  Renderer2,
+  ViewChild,
+} from '@angular/core';
 
 @Component({
   selector: 'app-landing',
@@ -8,7 +14,15 @@ import { Component, OnInit } from '@angular/core';
 export class LandingComponent implements OnInit {
   public isCollapsed = true;
 
-  constructor() {}
+  @ViewChild('card') card!: ElementRef;
 
-  ngOnInit(): void {}
+  constructor(private renderer: Renderer2) {}
+
+  ngOnInit(): void {
+    this.renderer.listen('window', 'click', (e: Event) => {
+      if (!this.card.nativeElement.contains(e.target)) {
+        this.isCollapsed = !this.isCollapsed;
+      }
+    });
+  }
 }

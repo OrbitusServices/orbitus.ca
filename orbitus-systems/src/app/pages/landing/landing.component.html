@@ -9,13 +9,12 @@
     <div class="my-auto px-3">
       <!-- logo -->
       <div class="my-5">
-        <img src="assets/img/logo/orbitus-logo.png" class="img-fluid" style="max-width: 400px"
-          (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+        <img src="assets/img/logo/orbitus-logo.png" class="img-fluid" style="max-width: 400px">
       </div>
 
       <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
         <div class="d-flex align-items-center justify-content-center">
-          <div class="card card-body shadow bg-dark py-5" style="max-width: 500px;">
+          <div #card class="card card-body shadow bg-dark py-5" style="max-width: 500px;">
             <h5>What do we do?</h5>
             <p class="text-white-50">Well basically, we just program things. You might recognize us from one of the
               following projects.</p>
