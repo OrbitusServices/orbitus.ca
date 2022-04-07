@@ -1,0 +1,63 @@
+<main class="d-flex vh-100 text-center text-light bg-dark">
+  <div class="cover-overlay"></div>
+
+  <video [muted]="'muted'" playsinline="playsinline" autoplay="autoplay" loop="loop">
+    <source src="assets/video/milky-way.mp4" type="video/mp4">
+  </video>
+
+  <div class="cover-container d-flex vw-100 vh-100 mx-auto flex-column">
+    <div class="my-auto px-3">
+      <!-- logo -->
+      <div class="my-5">
+        <img src="assets/img/logo/orbitus-logo.png" class="img-fluid" style="max-width: 400px"
+          (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+      </div>
+
+      <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+        <div class="d-flex align-items-center justify-content-center">
+          <div class="card card-body shadow bg-dark py-5" style="max-width: 500px;">
+            <h5>What do we do?</h5>
+            <p class="text-white-50">Well basically, we just program things. You might recognize us from one of the
+              following projects.</p>
+            <div class="d-grid gap-2 d-md-block">
+              <a href="https://guildrestore.com/" target="new" class="btn btn-primary">
+                <img class="fa fa-fw me-1" src="assets/img/logo/guildrestore.svg" />
+                Guild Restore
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="text-white bg-dark py-3 opacity-25">
+      Copyright &copy; <strong>Orbitus Systems</strong> 2022
+    </footer>
+  </div>
+
+
+</main>
+
+<ng-template #about let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="mb-3">
+        <label for="dateOfBirth">Date of birth</label>
+        <div class="input-group">
+          <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker
+            #dp="ngbDatepicker">
+          <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+  </div>
+</ng-template>
