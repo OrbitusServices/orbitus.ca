@@ -8,8 +8,11 @@
   <div class="cover-container d-flex vw-100 vh-100 mx-auto flex-column">
     <div class="my-auto px-3">
       <!-- logo -->
-      <div class="my-5">
-        <img src="assets/img/logo/orbitus-logo.png" class="img-fluid" style="max-width: 400px">
+      <div class="my-5 d-flex align-items-center justify-content-center">
+        <div style="max-width: 400px">
+          <img src="assets/img/logo/orbitus-logo.png" class="img-fluid">
+        </div>
+
       </div>
 
       <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
@@ -18,11 +21,11 @@
             <h5>What do we do?</h5>
             <p class="text-white-50">Well basically, we just program things. You might recognize us from one of the
               following projects.</p>
-            <div class="d-grid gap-2 d-md-block">
-              <a href="https://guildrestore.com/" target="new" class="btn btn-primary">
-                <span class="d-flex align-items-center">
+            <div class="d-grid gap-2 d-md-block mt-3">
+              <a href="https://guildrestore.com/" target="new" class="btn btn-primary px-3">
+                <span class="d-flex align-items-center justify-content-center">
                   <img class="fa fa-fw me-1" src="assets/img/logo/guildrestore.svg" />
-                  Guild Restore
+                  <span>Guild Restore</span>
                 </span>
               </a>
             </div>
@@ -37,8 +40,6 @@
       Copyright &copy; <strong>Orbitus Systems</strong> 2022
     </footer>
   </div>
-
-
 </main>
 
 <ng-template #about let-modal>
